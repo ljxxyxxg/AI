@@ -1,0 +1,63 @@
+package javaBasic.ch01.src15;
+
+public class DataTypeEX {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub     
+	   // 자료형 - 기본형, 참조형
+		
+		
+	   byte b1 = 30;
+	   System.out.println( b1 );
+	   
+	   byte b2 = 10;
+	   byte b3 = 20;
+	   
+	   int b23 = b2 + b3; // + 더하기 연산자는 int형으로 처리함  byte 형 int 형 byte 형
+	   System.out.println( b23 );
+	   
+	   byte b4 = 20;
+	   short s4= 30;
+	   
+	   int sumb4s4 = b4 + s4;
+	   System.out.println( sumb4s4 );
+	   
+	   float f1 = 3.14f;
+	   float f2 = 3.12345678f; // 소수점 7자리까지 출력
+	   
+	   System.out.println(f1 + "   " + f2);
+	   
+	   double d1 = 3.123456789012345; // 15자리 까지 찍는다
+	   System.out.println( d1 );
+	   
+	   //실수형은 float : 4 byte 와 double : 8 byte
+	     //float는 뒤에 f 
+	     //double형이 실수의 기본형
+	   
+	   float f3=10.23f;
+	   float f4=2.45f;
+	   float mulf3f4 = f3 * f4;
+	   System.out.println( mulf3f4 );
+	   
+	   double resulf3f4d = f3 / f4; // float 자료형이 double 형으로 변환 (cast 연산: 자동형변환)
+			
+       int ii1 = 10;
+       short ss1 = 20;
+       
+       float ff1 = ii1; // 실수형 = 정수형
+     
+    
+       //실수형 --> 정수형 30평 아파트 ---> 8평 원룸 가구를 버린다. 데이터 손실
+       //형식 정수형타입 변수명 =(정수형 타입) 실수형 변수
+       
+       double d10 = 3.14;
+       int change10 = (int) d10;
+       System.out.println(d10 + "  " + change10);
+
+       
+       
+       
+      
+	}
+
+}

@@ -1,0 +1,25 @@
+package javaBaisc.ch01.sec12;
+
+public class Calculator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		  String name = "홍길동";
+		
+			
+		   int basicPay=50000; //급여
+		   String phoneNumber = "010-3333-4444"; //전화번호
+		   String accountNumber = "국민 123-1111-1234"; //계좌번호
+		   String dept = "알바생"; //직급
+		   boolean sex = true; //성별 남자
+		   double tex = 0.03; //세금 비율
+		   
+		   System.out.println("1번 알바정도 : "+ name+ "  " + basicPay + "" + phoneNumber);
+		   System.out.println(accountNumber + "  " + dept + "  " + sex + "  " + tex);
+		   
+	}
+
+}
+
+
+

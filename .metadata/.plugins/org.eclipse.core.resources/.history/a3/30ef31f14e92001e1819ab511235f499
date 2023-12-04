@@ -1,0 +1,15 @@
+package javaBaisc.ch01.sec12;
+
+public class Calculator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x = 1;           //변수 x를 선언하고 1을 저장
+ 		int y = 2;           //변수 y를 선언하고 2를 저장
+ 		int z = 3;
+ 		int b = 4;
+		int result = x + y + z + b;  //변수 x를 선언하고 1을 저장
+		System.out.println(result);  //변수 x를 선언하고 1을 저장
+	}
+
+}
