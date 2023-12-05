@@ -1,0 +1,22 @@
+package javaBasic.ch03.sec02;
+
+import java.util.Scanner;
+
+public class 산술연산자 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	
+		
+		double math = sc.nextDouble();
+		
+		System.out.println( math );
+		
+		
+		boolean  man = sc.nextBoolean();
+		System.out.println( man );
+				
+	}
+
+}

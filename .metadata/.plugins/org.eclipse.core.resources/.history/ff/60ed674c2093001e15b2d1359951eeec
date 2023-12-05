@@ -1,0 +1,36 @@
+
+public class 대입연산자 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		int count = 100;
+		
+		count += 10; //count = count + 10;
+		
+		count -= 20; //count = count - 20;
+		
+		count *= 5;
+		
+		count /= 10;
+		
+		count %= 5;
+		
+		boolean b1 = true;
+		
+		b1 &= false;
+		b1 |= true;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

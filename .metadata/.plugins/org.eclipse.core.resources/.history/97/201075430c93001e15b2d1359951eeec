@@ -1,0 +1,16 @@
+package javaBasic.ch03.sec02;
+
+public class operator01 {
+
+	public static void main(String[] args) {
+		int number = 10;
+		number = number + 1; //엄청 많이쓰는 수식
+		number++;
+		System.out.println( number );
+		
+		number = number -1;
+		number--;
+		System.out.println( number );
+	}
+
+}

@@ -1,0 +1,29 @@
+package javaBasic.ch03.sec01;
+
+public class 변수복습 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String vehicleName = "싼타페";
+		String vehName = "코란도";
+		
+		  short basicPay = 35,000,000; //급여
+		  String phoneNumber = "010-3333-4444"; //전화번호
+		  String accountNumber = "국민 123-1111-1234"; //계좌번호
+		  String dept = "알바생"; //직급
+		  boolean sex = true; //성별 남자
+		  double tex = 0.03; //세금 비율
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

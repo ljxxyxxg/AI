@@ -1,0 +1,58 @@
+package javaBasic.ch04.sec01;
+
+public class while문 {
+
+	public static void main(String[] args) {
+		// 반복문
+		// 형식 while(조건) {참이면 수행할 문장 }
+		// 1 ~ 100 출력
+		// 숫자변수 만들어 1출력하기 -> 변수 + 1 -> 출력
+		int number = 10;
+		
+		System.out.println( number );
+		
+		while( number < 100) {number++;
+		System.out.println( number );}
+		
+		
+		int number2 = 100;
+		while(-20 < number2 && number2 < 100) {System.out.println( number2);}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}
