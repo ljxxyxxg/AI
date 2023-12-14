@@ -84,11 +84,12 @@ public class BankApplication {
 		boolean flag = false;
 		for( i = 0; i < count; i++) {
 			if(출금할계좌번호.equals(accounts[i].get계좌번호()   )) {
-				flag =true; }
-				if(accounts[i].잔고 < 출금금액) {System.out.println("잔고가 부족합니다.")};
+				flag =true; 
+				if(accounts[i].잔고 < 출금금액) {System.out.println("잔고가 부족합니다.");}
 				else {accounts[i].잔고 = accounts[i].get잔고() - 출금금액;
 			    break;}
-		};
+		
+	    };
 			
 			if(!flag)System.out.println("계좌번호가 틀렸습니다. 확인하세요.");
 			
