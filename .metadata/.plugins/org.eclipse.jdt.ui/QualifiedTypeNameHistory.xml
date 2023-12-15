@@ -39,4 +39,10 @@
     <fullyQualifiedTypeName name="javaBasic5.ch08.sec03.CarRun"/>
     <fullyQualifiedTypeName name="javaBasic5.ch08.sec03.Taxi"/>
     <fullyQualifiedTypeName name="javaBasic5.ch08.sec03.Train"/>
+    <fullyQualifiedTypeName name="javaBasic5.ch08.sec04.Remocon"/>
+    <fullyQualifiedTypeName name="javaBasic5.ch08.sec04.Soundable"/>
+    <fullyQualifiedTypeName name="javaBasic5.ch08.sec04.DataAccessObject"/>
+    <fullyQualifiedTypeName name="javaBasic6.ch09.sec01.A"/>
+    <fullyQualifiedTypeName name="javaBasic6.ch09.sec02.AA.BB"/>
+    <fullyQualifiedTypeName name="javaBasic6.ch09.sec03.localExample"/>
 </qualifiedTypeNameHistroy>
