@@ -5,7 +5,6 @@
     <fullyQualifiedTypeName name="java.lang.Boolean"/>
     <fullyQualifiedTypeName name="java.util.Calendar"/>
     <fullyQualifiedTypeName name="java.sql.DatabaseMetaData"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="javaBaisc3.ch06.sec04.AA"/>
     <fullyQualifiedTypeName name="javaBaisc3.ch06.sec05.Sigleton"/>
@@ -27,8 +26,6 @@
     <fullyQualifiedTypeName name="javaBasic4.ch07.sec06.SnowTire"/>
     <fullyQualifiedTypeName name="javaBasic4.ch07.sec07.A"/>
     <fullyQualifiedTypeName name="javaBasic4.ch07.sec08.D"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="javaBasic4.ch07.sec12.Promotion4Ex"/>
     <fullyQualifiedTypeName name="javaBasic4.ch07.sec13.HankookTire"/>
     <fullyQualifiedTypeName name="javaBasic4.ch07.sec14.Vehicle"/>
@@ -45,4 +42,19 @@
     <fullyQualifiedTypeName name="javaBasic6.ch09.sec01.A"/>
     <fullyQualifiedTypeName name="javaBasic6.ch09.sec02.AA.BB"/>
     <fullyQualifiedTypeName name="javaBasic6.ch09.sec03.localExample"/>
+    <fullyQualifiedTypeName name="javaBasic6.ch09.sec02.Outter.Inner"/>
+    <fullyQualifiedTypeName name="javaBasic6.ch09.sec05.RemoteControl"/>
+    <fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+    <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.sql.Time"/>
+    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="java.lang.module.ModuleDescriptor"/>
+    <fullyQualifiedTypeName name="java.lang.module.ModuleDescriptor.Modifier"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="javaApp1.ch12.sec01.Member"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
