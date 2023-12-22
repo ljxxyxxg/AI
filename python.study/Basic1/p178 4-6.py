@@ -82,7 +82,7 @@ for i in range( 2, 30) :
     if 31 % i == 0:
         x = False
         break
-if X :
+if x :
     print(f'{31}은 소수이다')
 
 
@@ -91,8 +91,7 @@ X = True #소수인 경우는 True
 for i in range(a,b+1) : #start 30 end 38
     X = True
     for j in range(2, a) : #2~29까지 나누어 본다
-        if i % j == 0 :
-          break #한단계 반복문 밖으로 나간다 즉 for j 에서 문 밖으로 
+        if i % j == 0 : 
+            break #한단계 반복문 밖으로 나간다 즉 for j 에서 문 밖으로 
     if X:
-      print(i , end=" ")  
-  
+        print(i , end=" ")   
