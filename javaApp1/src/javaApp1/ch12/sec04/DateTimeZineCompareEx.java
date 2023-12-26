@@ -45,7 +45,7 @@ public class DateTimeZineCompareEx {
 		} else if ( currentDateTime.isEqual(stopDateTime1) ) {
 			System.out.println("오늘 이벤트 마감 세일 85%");
 			
-		} else {
+		} else { 
 			System.out.println("이벤트 종료!");
 		}
 		
