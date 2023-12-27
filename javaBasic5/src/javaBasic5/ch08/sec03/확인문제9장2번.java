@@ -8,7 +8,7 @@ public class 확인문제9장2번 {
 		//Driver1 d1 = new Driver1();
 		A1 a1 = new B1();
 		d1.method(new C1());
-	
+
 		
 		
 		
