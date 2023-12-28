@@ -32,7 +32,15 @@ area_code = { "02":"서울", "051":"부산", "053":"대구", "052":"광주"}
 for k in area_code:# key 값이 자동으로 한개 씩 k로 들어간다
   print( f"{k}-{area_code[k]}")
 
+#1)
 sk = " "
 for k in area_code:
   sk = sk + k + " "
 print( sk )
+
+#2)
+keys = []
+for k in area_code :
+  keys.append( k ) #키를 모아 주는것
+print( keys )
+

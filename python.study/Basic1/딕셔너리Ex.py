@@ -31,3 +31,4 @@ for key in inventory :
 for i in inventory :
   t = inventory[i][0] * inventory[i][1]
   print(f'{i} {inventory[i][0]}원 {inventory[i][1]}개 {t}원')
+  
