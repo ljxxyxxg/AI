@@ -11,7 +11,7 @@
 
 #       }
 
-# string = json.dumps( member, ensure_ascii=False, indent=4)
+# string = json.dump( member, ensure_ascii=False, indent=4)
 # print( string )
 # print( type( string ))
 
