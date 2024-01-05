@@ -13,7 +13,7 @@ body {
   background-color: rgb(240, 228, 216);
   height: 40px;
   width: 100%;
-  box-shadow: 0, 0.6px rgb(16, 205, 48);
+  box-shadow: 0 0.6px rgb(126, 232, 144);
   position:fixed;
   top: -1px;
 }
