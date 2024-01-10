@@ -1,19 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>레이아웃 - flex</title>
+    <title>수학은 한방! 한방수학</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../excss/layout_flex.css" />
   </head>
   <body>
-    <div id="wrap">
-      <div id="header">찬혁아</div>
-      <div id="nav">행복하니?</div>
-      <div id="aside1">짜증나지</div>
-      <div id="section">원래그렇단다</div>
-      <div id="aside2">견뎌야지 뭐</div>
-      <div id="footer">벌써 집가고싶긴해</div>
+    <div id="header">
+      <div class="mainBar">
+        <div class="leftMainBar">
+          <div><a href="#"> 로그인 </a></div>
+          <div><a href="#"> 회원가입 </a></div>
+          <div><a href="#"> 장바구니 </a></div>
+          <div><a href="#"> 주문조회 </a></div>
+          <div><a href="#"> 마이페이지 </a></div>
+          <div><a href="#"> 즐겨찾기 </a></div>
+        </div>
+        <div class="rightMainBar">
+          <div><a href="#"> NOTICE </a></div>
+          <div><a href="#"> Q & A </a></div>
+          <div><a href="#"> REVIEW </a></div>
+          <div><a href="#"> MODEL </a></div>
+        </div>
+      </div>
     </div>
+    <header>
+      <h1>
+        <a href="http://ch.kjacademy.co.kr"
+          ><span class="hide">국제컴퓨터</span></a
+        >
+      </h1>
+      <h2 class="hide">메인 메뉴</h2>
+      <nav>
+        <ul>
+          <li><a href="#">기업정보</a></li>
+          <li><a href="#">인재채용</a></li>
+          <li><a href="#">뉴스룸</a></li>
+          <li><a href="#">채용정보</a></li>
+          <li><a href="#">고객지원</a></li>
+        </ul>
+      </nav>
+      <div class="util">
+        <a href="#">SNS</a>
+        <a href="#">KOR</a>
+        <button><span class="hide"> 검색 </span></button>
+      </div>
+    </header>
+    <aside>
+      <div id="table">
+        <table border="2">
+          <tr>
+            <th>교시</th>
+            <th>과목</th>
+          </tr>
+          <tr>
+            <td>1교시</td>
+            <td>자바 과목</td>
+          </tr>
+          <tr>
+            <td>2교시</td>
+            <td>파이썬</td>
+          </tr>
+        </table>
+        <table border="1">
+          <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+          </tr>
+          <tr>
+            <td colspan="2">5</td>
+
+            <td>7</td>
+            <td rowspan="3">8</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td colspan="2">10</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+          </tr>
+        </table>
+        <table border="1">
+          <tr>
+            <td colspan="2">1</td>
+            <td>3</td>
+            <td colspan="2">4</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td rowspan="3">14</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td colspan="3">21</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>31</td>
+            <td>32</td>
+            <td>33</td>
+            <td rowspan="2">35</td>
+          </tr>
+          <tr>
+            <td>41</td>
+            <td>42</td>
+            <td>43</td>
+            <td>44</td>
+          </tr>
+        </table>
+      </div>
+    </aside>
   </body>
 </html>
