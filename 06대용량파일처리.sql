@@ -259,26 +259,85 @@ select * from usertbl;
 select date( now() ), time( now() ), now();
 select sysdate();
 -- -------------------------------------대용량 파일 처리하기 - 파일  올리고(업로드) 내리기(다운로드)
+-- 1단계 데이터베이스를 만든다
 create database moviedb;
-
+-- 2단계 데이터베이스를 사용한다(활성화, 열기)
 use moviedb;
-
+-- 3단계 테이블 만들기
 create table movietbl
-	(movie_id int,
-     movie_title varchar( 30),
-     movie_director varchar(20),
-     movie_star varchar( 20 ),
-	 movie_script longtext, -- 대본
-     movie_film longblob) default charset = utf8mb4;
-	
- insert into movietbl
-	values( 1, '쉰들러리스트', '스필버그', '리암니슨',
-			load_file('D:/a1/study/temp/movies/Schindler.txt'),
-            load_file('D:/a1/study/temp/movies/Schindler.mp4'));
-            
+(
+	movie_id int,
+    movie_title varchar(30),
+    movie_director varchar(20),
+    movie_star varchar(20),
+    movie_script longtext,
+    movie_film longblob
+    );
+-- 4단계 행을 삽입한다.    
+insert into movietbl
+values
+	(1, '쉰들러리스트', '스필버그', '리암니슨', load_file('D:/a1/study/temp/movies/Schindler.txt'),
+										load_file('D:/a1/study/temp/movies/Schindler.mp4'));
+-- 5단계 select문으로 검색한다.
 select * from movietbl;
 
--- movie_script 와 movie_file이 null이 나온 이유
-show variables like 'max_allowed_packet'; -- 패킷의 크기를 보기
-show variables like 'secure_file_priv'; -- my sql이 지정한 업로드 경로
+-- longtext, longblob가 null이 나오는 이유
+-- 1. 이유 용량 부족
+show variables like 'max_allowed_packet';
 
+-- 2. 이유 경로를 틀려서
+show variables like 'secure_file_priv';
+
+-- 환경을 설정해야한다
+
+-- 내려받기 데이터베이스 --> 개인 컴퓨터로 다운로드
+select movie_script from movietbl where movie_id = 1;
+
+-- 내리기
+select movie_script from movietbl where movie_id = 1
+ into outfile 'D:/a1/study/temp/movies/movie_script_copy.txt'
+ lines terminated by '\\n';
+ 
+ -- 1.단계 내릴 것을 확인
+ select movie_film from movietbl where movie_id = 1;
+
+
+-- 2.단계 내리기
+select movie_film from movietbl where movie_id = 1
+	into outfile 'D:/a1/study/temp/movies/movie_film_copy.mp4';
+    
+    
+-- 피벗의 구현
+use sqldb;
+select * from usertbl;
+select * from buytbl;
+
+create table pivotTest
+(
+	uName char(3),
+    season char(2),
+    amount int
+);
+
+insert into pivotTest values
+('김범수', '겨울', 10), ('김범수', '봄', 25), ('김범수', '여름', 15), ('김범수', '가을', 25),
+('윤종신', '가을', 20), ('윤종신', '봄', 30), ('윤종신', '여름', 40), ('윤종신', '겨울', 30);
+
+-- 피벗: 함수 사용해서 보기 편하게 만들기
+select * from pivotTest;
+
+select uName '이름', sum( if(season ='봄', amount, 0) ) '봄',
+					sum( if(season ='여름', amount, 0) ) '여름',
+                    sum( if(season ='가을', amount, 0) ) '가을',
+                    sum( if(season ='겨울', amount, 0) ) '겨울' ,
+                    sum( amount) '합계'
+from pivotTest group by uName;
+
+-- 비타민 퀴즈
+select season, sum( if(uName ='김범수', amount, 0) ) '김범수',
+				sum( if(uName ='윤종신', amount, 0) ) '윤종신',
+				sum( amount) '합계'
+                
+
+                    
+from pivotTest group by season;
