@@ -148,6 +148,50 @@ select * from employees.employees;
 
 -- sqldb 사용하러 가기
 use sqldb;
+
+drop table if exists testtbl4;
+select * from buytbl;
+-- 상품명 : 상품명 , 가격 테이블 만들기
+-- 1단계 테이블 만들기
+create table if not exists testtbl4
+(prodName varchar(40) not null,
+price int not null);
+-- 2단계 삽입한다.
+select distinct prodName, price from buytbl;
+
+insert into testtbl4
+	select distinct prodName, price from buytbl;
+
+select * from testtbl4 order by price desc;
+
+-- 청바지 가격을 100으로 숮정하기
+update testtbl4 set price = 100 where prodName = '청바지';
+-- 가장 높은 가격인 것을 찾아서 10% 인하하기
+-- 1단계 높은가격 찾기
+select price from testtbl4 order by price desc limit 1;
+
+-- 2단계 10퍼 인하
+update testtbl4 set price = price - price * 0.1 where price = (select price from(select price from testtbl4 order by price desc limit 1) as t);
+
+
+-- delete문
+select * from buytbl;
+
+-- copyBuy 테이블 복사해서 만들기
+create table copyBuy
+	select * from buytbl;
+
+select * from copyBuy;
+
+-- copyBuy amount가 제일 작은 것 찾아서 삭제하기
+ -- 1단계 amount가 제일 작은 것 찾기
+ select amount from copyBuy order by amount asc limit 1;
+ 
+ -- 2단계 삭제하기
+ delete from copyBuy where amount = (select amount from( select amount from copyBuy order by amount asc limit 1) as t );
+
+select * from copyBuy;
+
 create table testtbl4 ( id int, fname varchar(50), Iname varchar(50) );
 
 select emp_no, first_name, last_name from employees.employees;
