@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ca {
+  margin: 50px;
+  padding: 50px;
+}
+
+.caa {
+  padding-bottom: 40px;
+}
