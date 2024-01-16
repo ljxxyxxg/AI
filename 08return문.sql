@@ -365,6 +365,179 @@ select * from usertbl;
 update usertbl set birthyear = 1977 where userId = 'BBK';
 update usertbl set addr = '서울' where userId = 'EJW';
 update usertbl set addr = '경남' where userId = 'KBS';
-delete from backup_usertbl where userId = 'KBS';
+update usertbl set addr = '경기' where userId = 'JKW';
+
 
 select * from backup_usertbl;
+
+-- 삭제가 발생했을 때
+drop trigger bud;
+
+delimiter //
+create trigger bud -- 언제 누구에게
+	after delete
+    on usertbl
+    for each row
+begin
+	insert into backup_usertbl
+    values (
+    OLD.userID,OLD.name,OLD.birthYear, old.addr,       
+			old.mobile1,old.mobile2,old.height,old.mDate,
+            '삭제',curdate(), current_user()
+    ) ;
+
+end //
+delimiter ;
+
+select * from usertbl;
+delete from usertbl where userid = 'YJS';
+
+select * from backup_usertbl;
+
+
+-- 삽입 후 경고 메세지 띄우기
+drop trigger uti;
+
+delimiter //
+create trigger uti -- 언제? update 후에 무엇을? usertbl의 모든 행을
+	after insert
+    on usertbl
+    for each row
+begin -- 어떻게?
+	signal sqlstate '45000'
+    set message_text = '데이터 입력을 시도했습니다 귀아의 정보가 서버에 기록되었습니다.';
+    
+    end//
+delimiter ;
+
+insert into usertbl values( 'ABB', '에베씨' ,1977, '서울', '011', '11111111',181,'2019-12-25','잠재고객');
+
+-- before 트리거
+-- old 변경되기 전 자료, new 변경되고 난 후 자료
+
+
+-- 요구사항 생일 잘못입력되지 않도록 1900 이전 0 입력 올해 년도 보다 이후면 0 입력
+delimiter //
+create trigger ubi
+	before insert
+    on usertbl
+    for each row
+begin
+	if new.birthyear < 1900 then
+		set new.birthyear = 0;
+	elseif new.birthyear > year(curdate()) then
+		set new.birthyear = year( curdate()) ;
+	end if;
+end // 
+delimiter ;
+
+insert into usertbl values( 'ABB', '에베씨' ,1977, '서울', '011', '11111111',181,'2019-12-25','잠재고객');
+insert into usertbl values( 'EEE', '이이이' ,2877, '서울', '011', '11111111',181,'2019-12-25','잠재고객');
+
+select * from usertbl;
+
+-- 주소가'평양' 입력되면 '간첩'
+-- 전화 번호가'999' 입력되면 '010' 바꿔입력
+
+insert into usertbl values( 'CCC', '추추추' ,1977, '평양', '011', '11111111',181,'2019-12-25','간첩');
+insert into usertbl values( 'DDD', '디디디' ,1977, '서울', '011', '11111111',181,'2019-12-25','잠재고객');
+
+drop trigger ubi2;
+
+delimiter //
+create trigger ubi2
+	before insert
+    on usertbl
+    for each row
+begin
+	if new.addr = '평양' then
+		set new.addr = '외국';
+	elseif new.mobile1 = '999' then
+		set new.mobile2 = '010' ;
+	end if;
+end // 
+delimiter ;
+
+insert into usertbl values( 'FFF', '춰춰춰' ,1977, '평양', '011', '11111111',181,'2019-12-25','간첩');
+insert into usertbl values( 'ZZZ', '찹찹찹' ,1977, '평양', '999', '11111111',181,'2019-12-25','간첩');
+
+select * from usertbl;
+
+-- 생성한 trigger확인
+show triggers from sqldb;
+
+-- 다중 트리거
+-- 구매 1 물품테이블 1 배송테이블 +1
+
+drop database if exists triggerDB;
+create dataBase if not exists triggerDB;
+use triggerDB;
+
+-- 구매테이블
+create table ordertbl
+(orderNo int auto_increment primary key,
+userId varchar(5),
+prodName varchar(5),
+orderamount int) ;
+
+-- 물품테이블
+create table prodtbl
+(prodName varchar(5),
+account int) ;
+
+-- 배송테이블
+create table delivertbl
+(deliverNo int auto_increment primary key,
+prodName varchar(5),
+account int);
+
+-- 물품 테이블에 물건 입력
+insert into prodtbl values('사과' , 100);
+insert into prodtbl values('배' , 100);
+insert into prodtbl values('귤' , 100);
+
+select * from prodtbl;
+
+-- trigger
+delimiter //
+create trigger ordertg
+	after insert
+    on ordertbl
+    for each row 
+begin
+	update prodtbl set account = account - new.orderamount where prodName = new.prodName;
+end //
+delimiter ;
+
+-- 요구사항 물품 테이브을 업데이트 후 배송테이블에 삽입하기
+drop trigger prodtg;
+
+delimiter //
+create trigger prodtg
+	after update
+    on prodtbl
+    for each row
+begin
+declare orderAmount int; -- 변수 선언
+	set orderAmount = OLD.account - New.account; -- 100 - 95 = 5
+	insert into delivertbl values ( null, new.prodName, orderAmount);
+end //
+delimiter ;
+
+select * from ordertbl;
+select * from prodtbl;
+select * from delivertbl;
+
+
+desc ordertbl;
+insert into ordertbl values (null, 'BBK' , '사과', 5 );
+
+show triggers;
+
+    
+    
+    
+    
+    
+
+
