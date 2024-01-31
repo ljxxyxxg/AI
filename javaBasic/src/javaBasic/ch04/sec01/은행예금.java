@@ -41,10 +41,10 @@ public class 은행예금 {
 				default : System.out.println("메뉴를 잘못 누르셨어요 다시");}
 	
 			 }*/
-				Scanner sc = new Scanner(System.in);
+				Scanner sc1 = new Scanner(System.in);
 				System.out.println("학생부");
 				System.out.println("원하시는 선택지를 입력하세요.");
-				String menu = sc.nextLine();
+				String menu1 = sc1.nextLine();
 				
 				
 				
@@ -55,23 +55,23 @@ public class 은행예금 {
 				String name = "홍길동";
 				int score = 100;
 						
-				while( !menu.equals("4") ) {System.out.println("---------------------------");
+				while( !menu1.equals("4") ) {System.out.println("---------------------------");
 				System.out.println("1.학생명 | 2.점수 | 3.출력 | 4.종료");
 				System.out.println("---------------------------");
 				System.out.println("선택>");
-				menu = sc.nextLine();
+				menu1 = sc1.nextLine();
 				
-				switch( menu ) {
+				switch( menu1 ) {
 				case "1" : System.out.println("홍길동");
-							name = sc.nextLine();
-							sc.nextLine();
+							name = sc1.nextLine();
+							sc1.nextLine();
 							break;
 				case "2" : System.out.println("100");
-							score = sc.nextInt();
-							sc.nextLine();
+							score = sc1.nextInt();
+							sc1.nextLine();
 							break;
 				case "3" : System.out.println( "홍길동" + score );
-				            sc.nextLine();
+				            sc1.nextLine();
 							break;
 				case "4" : System.out.println("종료");
 							break;

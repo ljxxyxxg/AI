@@ -73,7 +73,7 @@ public class while문연습 {
 		//for( int i = 1; i<=3; i++) {System.out.println( i ); for( int  j = i ;  j <= i+1; j++) {System.out.print(j + "  ");} System.out.println();}
 		
 		//10 , (10,9)
-		for( int i = 10; i<=11; i++) {System.out.println( i ); for(int k = i ; k>= i-2; k--) {System.out.print(k+ "  ");}System.out.println();}
+//		for( int i = 10; i<=11; i++) {System.out.println( i ); for(int k = i ; k>= i-2; k--) {System.out.print(k+ "  ");}System.out.println();}
 		
 		
 		
@@ -205,7 +205,7 @@ public class while문연습 {
 		
 		
 		
-		.
+		
 		
 		
 		

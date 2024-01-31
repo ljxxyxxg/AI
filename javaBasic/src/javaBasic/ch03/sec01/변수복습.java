@@ -23,7 +23,7 @@ public class 변수복습 {
  	    double m1Name = 555555.56;
  	    double m2Name = 791666.67;
  	    
- 	    System.out.println( "차량명" + );
+ 	    System.out.println( "차량명" + "" );
 		
 		 
 		

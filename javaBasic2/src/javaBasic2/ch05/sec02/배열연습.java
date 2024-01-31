@@ -110,10 +110,10 @@ public class 배열연습 {
 		 for( int i=0; i< names2.length ; i++) {System.out.println(names2[i]+"" + scores2[i]);}
 		 
 		 
-		String[] names3 = {"차량명" , "차량 총액" , "인도금" ,"할부원금" , "상환기간9(월)" , "월납입금"	}
-		String[] names4 = {"싼타페" , "코란도"}
+		String[] names3 = {"차량명" , "차량 총액" , "인도금" ,"할부원금" , "상환기간9(월)" , "월납입금"	};
+		String[] names4 = {"싼타페" , "코란도"};
 		
-		int[] scores3 = {35000000, 15000000,
+		int[] scores3 = {35000000, 15000000};
 		
 		
 		
