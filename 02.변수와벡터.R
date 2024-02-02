@@ -313,3 +313,23 @@ f <- factor(a)
 
 levels( f )                 
 as.integer(f)
+
+#추가문제
+a <- 4
+b <- 5
+c <- a+b
+c
+
+x1 <- 6
+x2 <- 8
+x3 <- 10
+y = 2*2 + 5*x3 + 10
+y
+
+val.a <- 10
+val.b <- 20
+sum.ab <- val.a + val.b
+
+vc.1 <- c(95, 86, 47, 55 ,08)
+vc.1
+
