@@ -356,3 +356,4 @@ write.csv(iris.setosa, 'irisfilename.csv')
 # 첫째 열에는 열번호가 있다. 이부분을 저장할때 제외하고 싶다.
 write.csv(iris.setosa, 'irisFile1.csv', row.names = F)
 
+
