@@ -9,7 +9,7 @@ ds
 barplot( ds, main = '좋아하는 과정')
 pie(ds)
 
-fav.color <- c(2,3,1,1,2,3,2,,1,1,2,3,3)
+fav.color <- c(2,3,1,1,2,3,2,1,1,2,3,3)
 ds2 <- table(fav.color)
 
 colors <- c('green', 'red', 'blue')
@@ -18,7 +18,7 @@ pie(ds2, main='favorite season', col = colores)
 
 #연속성 자료형
 weight <- c(60,62,64,65,68,69)
-weight.heavy <- (weight,120)
+weight.heavy <- (weight, 120)
 weight
 mean(weight.heavy)
 
