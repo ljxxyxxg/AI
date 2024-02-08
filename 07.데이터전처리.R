@@ -48,7 +48,9 @@ head(x)
 for(i in 1:nrow(x)) {
   for( j in 1:ncol(x)) { 
   this.na <- is.na(x[i,j])
-  print(this.na)
+  if(this.na) {
+    x[i,j] <- 0
+  }
   }
 }
 head( this.na)
